@@ -12,7 +12,21 @@
 
 ActiveRecord::Schema.define(version: 2019_05_07_140552) do
 
+  create_table "generation_moves", force: :cascade do |t|
+    t.integer "move_id"
+    t.integer "generation_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "generations", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "moves", force: :cascade do |t|
+    t.string "url"
     t.string "name"
     t.integer "accuracy"
     t.integer "effect_chance"
@@ -24,16 +38,16 @@ ActiveRecord::Schema.define(version: 2019_05_07_140552) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "pokemon_moves", force: :cascade do |t|
+  create_table "pokemon_generations", force: :cascade do |t|
     t.integer "pokemon_id"
-    t.integer "move_id"
+    t.integer "generation_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "pokemon_versions", force: :cascade do |t|
+  create_table "pokemon_moves", force: :cascade do |t|
     t.integer "pokemon_id"
-    t.integer "version_id"
+    t.integer "move_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -44,19 +58,6 @@ ActiveRecord::Schema.define(version: 2019_05_07_140552) do
     t.integer "height"
     t.integer "order"
     t.integer "weight"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "version_moves", force: :cascade do |t|
-    t.integer "move_id"
-    t.integer "version_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "versions", force: :cascade do |t|
-    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
