@@ -9,6 +9,7 @@ class CreateMoves < ActiveRecord::Migration[5.2]
       t.integer :priority
       t.integer :power
       t.string :effect
+      t.integer :generation_id
 
       t.timestamps
     end

@@ -6,6 +6,7 @@ class CreatePokemons < ActiveRecord::Migration[5.2]
       t.integer :height
       t.integer :order
       t.integer :weight
+      t.integer :generation_id
       # t.string :species
 
       t.timestamps

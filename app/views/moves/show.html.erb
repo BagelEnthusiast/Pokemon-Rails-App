@@ -1,0 +1,20 @@
+<h1><%=@move.name%></h1>
+<h3>Stats</h3>
+<ul>
+<li>Accuracy: <%=@move.accuracy%></li>
+<li>Effect Chance: <%= @move.effect_chance %></li>
+<li>PP: <%= @move.pp %></li>
+<li>Priority: <%= @move.priority %></li>
+<li>Power: <%= @move.power %></li>
+<li>Effect: <%= @move.effect %></li>
+<li>Generation: <%= @generation.name %>
+</ul>
+
+<p>Pokemon Who Learn <%= @move.name %>:</p>
+<ul>
+<% @move.pokemons.each do |pokemon| %>
+<li>
+    <%= link_to pokemon.name, pokemon_path(pokemon) %>
+</li>
+<%end%>
+</ul>

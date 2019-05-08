@@ -1,0 +1,7 @@
+<h1>Moves</h1>
+<ul>
+<% @moves.each do |move| %>
+<li><%= link_to mvoe.name, move_path(move) %></li>
+
+<%end %>
+</ul>

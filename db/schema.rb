@@ -10,14 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_07_140552) do
-
-  create_table "generation_moves", force: :cascade do |t|
-    t.integer "move_id"
-    t.integer "generation_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
+ActiveRecord::Schema.define(version: 2019_05_07_140543) do
 
   create_table "generations", force: :cascade do |t|
     t.string "name"
@@ -34,12 +27,6 @@ ActiveRecord::Schema.define(version: 2019_05_07_140552) do
     t.integer "priority"
     t.integer "power"
     t.string "effect"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "pokemon_generations", force: :cascade do |t|
-    t.integer "pokemon_id"
     t.integer "generation_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -58,6 +45,7 @@ ActiveRecord::Schema.define(version: 2019_05_07_140552) do
     t.integer "height"
     t.integer "order"
     t.integer "weight"
+    t.integer "generation_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

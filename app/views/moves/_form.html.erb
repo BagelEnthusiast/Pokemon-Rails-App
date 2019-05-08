@@ -1,0 +1,36 @@
+<% if flash[:error] %>
+<% flash[:error].each do |e| %>
+<p><%= e %></p>
+<%end%>
+<%end%>
+
+<%= form_for @move do |f| %>
+<%= f.label "Name:" %>
+<%= f.text_field :name %>
+<br />
+<%= f.label "Accuracy:" %>
+<%= f.number_field :accuracy %>
+<br />
+<%= f.label "Effect Chance:" %>
+<%= f.number_field :effect_chance %>
+<br />
+<%= f.label "PP:" %>
+<%= f.number_field :pp %>
+<br />
+<%= f.label "Priority:" %>
+<%= f.number_field :priority %>
+<br />
+<%= f.label "Power:" %>
+<%= f.number_field :power %>
+<br />
+<%= f.label "Effect:" %>
+<%= f.text_field :effect %>
+<br />
+<%= f.label "Generation:" %>
+<%= f.collection_select :generation_id, @generations, :id , :name %> 
+<br/>
+<%= f.label "Pokemon:" %>
+<%= f.collection_check_boxes :pokemon_ids, @pokemons, :id , :name %> 
+<br/>
+<%= f.submit %>
+<% end %> 
