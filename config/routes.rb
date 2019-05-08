@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get "/", to: 'application#home'
+  root 'application#home'
   resources :moves
   resources :generations
   resources :pokemons

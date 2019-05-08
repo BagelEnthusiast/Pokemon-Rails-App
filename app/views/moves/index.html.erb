@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-8 offset-sm-2">
+      <h1>Moves</h1>
+      <hr>
+      <%= simple_form_for :search, url: moves_path, method: "GET", html: { class: 'form-inline' } do |f| %>
+        <%= f.input :name, input_html: {value: ""} %>
+        <%= f.submit "Search", class: "btn btn-primary" %>
+      <% end %>
+      <% @moves.each do |move| %>
+        <h3><%= move.name %></h3>
+      <% end %>
+      <%= link_to "Home", root_path %>
+    </div>
+  </div>
+</div>
