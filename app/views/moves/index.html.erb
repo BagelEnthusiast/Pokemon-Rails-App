@@ -8,7 +8,7 @@
         <%= f.submit "Search", class: "btn btn-primary" %>
       <% end %>
       <% @moves.each do |move| %>
-        <h3><%= move.name %></h3>
+        <h3><%= link_to move.name, move_path(move) %></h3>
       <% end %>
       <%= link_to "Home", root_path %>
     </div>

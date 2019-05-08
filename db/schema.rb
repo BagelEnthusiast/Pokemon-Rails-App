@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_07_140543) do
+ActiveRecord::Schema.define(version: 2019_05_08_165711) do
 
   create_table "generations", force: :cascade do |t|
     t.string "name"
@@ -46,6 +46,17 @@ ActiveRecord::Schema.define(version: 2019_05_07_140543) do
     t.integer "order"
     t.integer "weight"
     t.integer "generation_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "questions", force: :cascade do |t|
+    t.string "content"
+    t.string "op1"
+    t.string "op2"
+    t.string "op3"
+    t.string "op4"
+    t.string "correct_answer"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

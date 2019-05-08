@@ -7,7 +7,7 @@ Generation.destroy_all
 PokemonMove.destroy_all
 
 Question.destroy_all
-Answer.destroy_all
+
 
 response_string = RestClient.get("https://pokeapi.co/api/v2/")
 response_hash = JSON.parse(response_string)
@@ -90,17 +90,44 @@ end
 #   GenerationMove.create(generation_id: Generation.all.sample.id , move_id: Move.all.sample.id)
 # end
 
-#Quiz info
-question = 
+# #Quiz info
+move_questions = []
+move_questions = PokemonMove.all
 
 
-question[:results].each do | result |
-    question = Question.create({ content:result[:question] })
-    question.correct_answer = Answer.create({ content:result[:correct_answer], question:question })
-    question.save
-    result[:incorrect_answers].each do | answer |
-        answer2 = Answer.create({ content:answer, question:question })
-    end
+5.times do 
+  move = move_questions.sample
+  move_questions.delete(move)
+  selected_move = Move.find(move.move_id)
+
+  correct_poke_move = PokemonMove.where(move_id: move.move_id)
+  correct_pokemon = Pokemon.find(correct_poke_move.sample.pokemon_id)
+
+  incorrect_poke_move = PokemonMove.where.not(move_id: move.move_id)
+  temp = []
+  incorrect_poke_move.each do |poke_move|
+    temp << Pokemon.find(poke_move.pokemon_id).name
+  end
+  incorrect_pokemons = temp.uniq
+  incorrect_pokemons.delete(correct_pokemon.name)
+
+  options = ["op1", "op2", "op3", "op4"]
+  correct_option = options.sample
+  options.delete(correct_option)
+  incorrect_op1 = options.sample
+  options.delete(incorrect_op1)
+  incorrect_op2 = options.sample
+  options.delete(incorrect_op2)
+  incorrect_op3 = options.sample 
+
+  incorrect_poke_1 = incorrect_pokemons.sample
+  incorrect_pokemons.delete(incorrect_poke_1)
+  incorrect_poke_2 = incorrect_pokemons.sample
+  incorrect_pokemons.delete(incorrect_poke_2)
+  incorrect_poke_3 = incorrect_pokemons.sample
+
+  Question.create(content: "What pokemon has #{selected_move.name}?", "#{correct_option}": correct_pokemon.name,"#{incorrect_op1}": incorrect_poke_1 ,"#{incorrect_op2}": incorrect_poke_2, "#{incorrect_op3}": incorrect_poke_3, correct_answer: correct_pokemon.name )
 end
+
 
 
