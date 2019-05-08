@@ -6,6 +6,8 @@ Move.destroy_all
 Generation.destroy_all
 PokemonMove.destroy_all
 
+Question.destroy_all
+Answer.destroy_all
 
 response_string = RestClient.get("https://pokeapi.co/api/v2/")
 response_hash = JSON.parse(response_string)
@@ -88,6 +90,17 @@ end
 #   GenerationMove.create(generation_id: Generation.all.sample.id , move_id: Move.all.sample.id)
 # end
 
-#Pokemon-Moves Seed Data
+#Quiz info
+question = 
+
+
+question[:results].each do | result |
+    question = Question.create({ content:result[:question] })
+    question.correct_answer = Answer.create({ content:result[:correct_answer], question:question })
+    question.save
+    result[:incorrect_answers].each do | answer |
+        answer2 = Answer.create({ content:answer, question:question })
+    end
+end
 
 

@@ -3,6 +3,11 @@ class MovesController < ApplicationController
 
   def index
     @moves = Move.all
+    @search = params["search"]
+    if @search.present?
+        @name = @search["name"]
+        @moves = Move.where("name LIKE ?", "%#{@name}%")
+    end
   end
 
   def show
@@ -54,9 +59,11 @@ class MovesController < ApplicationController
       :pp,
       :priority,
       :power,
+      :search,
       :effect,
       :generation_id,
       :pokemon_ids => []
     )
   end
+  
 end

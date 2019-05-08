@@ -3,6 +3,11 @@ class PokemonsController < ApplicationController
 
   def index
     @pokemons = Pokemon.all
+    @search = params["search"]
+    if @search.present?
+        @name = @search["name"]
+        @pokemons = Pokemon.where("name LIKE ?", "%#{@name}%")
+    end
   end
 
   def show
@@ -53,9 +58,11 @@ class PokemonsController < ApplicationController
       :base_experience,
       :height,
       :order,
+      :search,
       :weight,
       :generation_id,
       :move_ids => [],
     )
   end
+ 
 end

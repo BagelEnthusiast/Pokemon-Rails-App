@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  resources :responses
+  resources :questions
+  resources :answers
+  get "/", to: 'application#home'
+  root 'application#home'
   resources :moves
   resources :generations
   resources :pokemons
