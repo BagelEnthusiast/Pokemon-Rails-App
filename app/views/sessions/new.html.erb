@@ -1,7 +1,10 @@
-<%= form_tag "/login", method: :post do %>
-<%= label_tag "Username:" %>
-<%= text_field_tag :username %>
-<%= label_tag "Password:" %>
-<%= password_field_tag :password %>
-<%= submit_tag "Login"%>
+<%= stylesheet_link_tag "login" %>
+<%= bootstrap_form_tag url: '/login' do |f| %>
+    <%= f.text_field :username %>
+    <%= f.password_field :password %>
+    <br>
+    <%= f.submit "Login"%>
 <%end%>
+
+
+<img src="https://img.rankedboost.com/wp-content/uploads/2017/09/Pokemon-GO-GEN-4-Pokedex.png">

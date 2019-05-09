@@ -1,8 +1,6 @@
-<%= form_for @user do |f| %>
-<%= f.label :username %>
-<%= f.text_field :username %>
-<%= f.password_field :password, placeholder: "Password" %>
-<%= f.password_field :password_confirmation, placeholder: "re-type Password" %>
-
-<%= f.submit %>
+<%= bootstrap_form_for @user do |f| %>
+    <%= f.text_field :username %>
+    <%= f.password_field :password, placeholder: "Password" %>
+    <%= f.password_field :password_confirmation, placeholder: "re-type Password" %>
+    <%= f.submit "Log In" %>
 <% end %> 
