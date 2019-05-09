@@ -1,6 +1,6 @@
 class PokemonsController < ApplicationController
   before_action :current_pokemon, only: [:show, :edit, :update, :destroy]
-
+  skip_before_action :authenticated
   def index
     @pokemons = Pokemon.all
     @search = params["search"]
