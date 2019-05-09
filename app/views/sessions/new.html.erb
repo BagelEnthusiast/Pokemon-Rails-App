@@ -1,9 +1,15 @@
 <%= stylesheet_link_tag "login" %>
-<%= bootstrap_form_tag url: '/login' do |f| %>
+<br>
+<%= bootstrap_form_tag url: '/login' do |f| %><br>
+    <br>
+    <br>
+    <br>
     <%= f.text_field :username %>
     <%= f.password_field :password %>
     <br>
     <%= f.submit "Login"%>
+    <br><br>
+    <%= f.button link_to "Create User", new_user_path %>
 <%end%>
 
 

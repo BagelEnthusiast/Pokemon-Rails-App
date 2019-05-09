@@ -18,7 +18,7 @@ class UsersController < ApplicationController
         
         if @user.valid?
             @user.save
-            redirect_to @user
+            redirect_to root_path
         else
             redirect_to new_user_path
         end

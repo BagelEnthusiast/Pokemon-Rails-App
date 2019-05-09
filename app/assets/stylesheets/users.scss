@@ -1,13 +1,4 @@
-body {
-    width: 700px;
-    height: 600px;
-    background-image: url("https://i.pinimg.com/originals/fd/18/c6/fd18c6d26d4d9d26a0bd9d1a2fb2bd04.png"), url("http://www.linuxcmd.org/lcshow/big/13/130052_pokemon-minimalist-wallpaper.png");
-    background-position: left top;
-    background-repeat: no-repeat;
-    background-size: 400px, cover;
-   }
-
-   html,
+html,
    body {
      height: 100%;
    }
@@ -24,8 +15,12 @@ body {
      justify-content: center;
      padding-top: 40px;
      padding-bottom: 40px;
+     background-image: url("https://cdna.artstation.com/p/assets/images/images/004/158/902/large/scott-zenteno-pokecenter.jpg?1480927479");
+     background-repeat: no-repeat;
+     background-size: cover;
      background-color: #fffffffa;
-     color: whitesmoke;
+     text-shadow: 2px 2px rgb(255, 255, 255);
+     
    }
    
    .form-signin {

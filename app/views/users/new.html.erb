@@ -1,4 +1,5 @@
-<%= bootstrap_form_for @user do |f| %>
+<%= stylesheet_link_tag "users" %>
+<%= bootstrap_form_for @user do |f| %><br><br>
     <%= f.text_field :username %>
     <%= f.password_field :password, placeholder: "Password" %>
     <%= f.password_field :password_confirmation, placeholder: "re-type Password" %>
