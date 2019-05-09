@@ -1,2 +1,14 @@
 <h3>Correct So Far: <%= @number_correct %></h3>
 
+<p><%= @question.content %>.</p>
+
+<%= form_for @question do |f| %>
+<%=  %>
+<ul>
+<li><%= @question.op1 %></li>
+<li><%= @question.op2 %></li>
+<li><%= @question.op3 %></li>
+<li><%= @question.op4 %></li>
+
+</ul>
+
