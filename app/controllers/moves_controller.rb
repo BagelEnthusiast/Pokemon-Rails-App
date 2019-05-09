@@ -1,6 +1,6 @@
 class MovesController < ApplicationController
   before_action :current_move, only: [:show, :edit, :update, :destroy]
-
+  skip_before_action :authenticated
   def index
     @moves = Move.all
     @search = params["search"]
