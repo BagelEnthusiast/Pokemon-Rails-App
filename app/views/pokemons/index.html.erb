@@ -8,9 +8,12 @@
         <%= f.submit "Search", class: "btn btn-primary" %>
       <% end %>
       <% @pokemons.each do |pokemon| %>
-        <h3><%= pokemon.name %></h3>
+        <h3><%= link_to pokemon.name, pokemon_path(pokemon) %></h3>
       <% end %>
+      <br><br>
       <%= link_to "Home", root_path %>
+      <%= link_to "Moves", moves_path %>
+
     </div>
   </div>
 </div>
