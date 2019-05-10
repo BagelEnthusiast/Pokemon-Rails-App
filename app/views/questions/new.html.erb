@@ -1,3 +1,4 @@
+<%= stylesheet_link_tag "pokemons" %>
 <h3>Correct So Far: <%= @number_correct %></h3>
 <p><%= @question.content %>.</p>
 
@@ -13,3 +14,6 @@
 <%= f.radio_button :user_answer, @answer4   %><br>
 <%= f.submit "Submit" %>
 <%end %>
+
+<%= link_to "Quit", root_path %>
+

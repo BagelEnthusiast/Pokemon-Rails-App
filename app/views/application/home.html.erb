@@ -1,27 +1,79 @@
-<%= stylesheet_link_tag "home" %>
+<!-- Page Content -->
+    <div class="container">
+     <%= stylesheet_link_tag "home" %>
+     
+      <!-- Page Heading -->
+      <a class="navbar-brand" href="#">
+          <img src="">
+        </a>
+      <h1 class="my-4">Professor Oak's Handbook</h1>
 
-<div class="container text-center">
-    <p id="notice"><%= notice %></p>
+      <!-- Project One -->
+      <div class="row">
+        <div class="col-md-7">
+          <a href="#">
+            <img class="img-fluid rounded mb-3 mb-md-0" src="http://www.barraques.cat/imgdirs/big/13/130331_pokemon-wallpaper-hd-download.jpg" alt="">
+          </a>
+        </div>
+        <div class="col-md-5">
+          <h3>Pokemon</h3>
+          <p>Wanna catch em all? You need to know it all! Start studying up on all the Pokemon you know and love right here!</p>
+          <a class="btn btn-primary" href="http://localhost:3000/pokemons">Browse Pokemon</a>
+        </div>
+      </div>
+      <!-- /.row -->
 
-    <h1>Welcome to Professor Oak's Handbook!</h1>
-    <p> Please select your browsing category:</p>
+      <hr>
 
-    <p>
-    <strong><%= link_to 'Pokemon', pokemons_path %></strong>
-    </p>
+      <!-- Project Two -->
+      <div class="row">
+        <div class="col-md-7">
+          <a href="#">
+            <img class="img-fluid rounded mb-3 mb-md-0" src="https://usercontent2.hubstatic.com/14165781.png" alt="">
+          </a>
+        </div>
+        <div class="col-md-5">
+          <h3>Moves</h3>
+          <p>Learn about the super powers that pack a fiery punch or send an icy chill down your spine... See what each move does and which of your Pokemon can learn these moves! </p>
+          <a class="btn btn-primary" href="http://localhost:3000/moves">View Moves</a>
+        </div>
+      </div>
+      <!-- /.row -->
 
-    <p>
-    <strong><%= link_to 'Moves', moves_path %></strong>
-    </p>
+      <hr>
 
-    <p>
-    <strong><%= link_to 'Quiz time!', new_question_path %></strong>
-    </p>
+      <!-- Project Three -->
+      <div class="row">
+        <div class="col-md-7">
+          <a href="#">
+            <img class="img-fluid rounded mb-3 mb-md-0" src="https://i.pinimg.com/originals/5b/a4/30/5ba430fc3dcb7bf318c41dc71bff96fd.jpg" alt="">
+          </a>
+        </div>
+        <div class="col-md-5">
+          <h3>Quiz</h3>
+          <p>Think you have what it takes to be a Pokemon master? It's one thing to have the best team, but you need the brains to compliment that brawn! See how well you really know your stuff!</p>
+          <a class="btn btn-primary" href="http://localhost:3000/questions/new">Quiz Me!</a>
+        </div>
+      </div>
+      <!-- /.row -->
 
+      <hr>
 
+      <!-- Project Four -->
+      <div class="row">
 
+       
+        <div class="col-md-5">
+          <a class="btn btn-primary" <%= link_to 'Logout', sessions_path, method: "delete" %></a>
+        </div>
+      </div>
+      <!-- /.row -->
 
-</div>
+      <hr>
+
+      
+    </div>
+    <!-- /.container -->
 
 
 

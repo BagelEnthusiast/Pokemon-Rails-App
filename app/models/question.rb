@@ -61,7 +61,6 @@ class Question < ApplicationRecord
         "#{incorrect_op1}": incorrect_poke_1,
         "#{incorrect_op2}": incorrect_poke_2,
         "#{incorrect_op3}": incorrect_poke_3}
-    byebug
   end
 
 end
