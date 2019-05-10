@@ -1,0 +1,28 @@
+<!-->
+<%= stylesheet_link_tag "home" %>
+
+<div class="container">
+    <p id="notice">
+        <%= notice %>
+    </p>
+
+    <h1>Welcome to Professor Oak's Handbook!</h1>
+    <p> Please select your browsing category:</p>
+
+    <p>
+        <strong><%= link_to 'Pokemon', pokemons_path %></strong>
+    </p>
+
+    <p>
+        <strong><%= link_to 'Moves', moves_path %></strong>
+    </p>
+
+    <p>
+        <strong><%= link_to 'Quiz time!', new_question_path %></strong>
+    </p>
+
+    <p>
+        <strong><%= link_to 'Logout', sessions_path, method: "delete" %></strong>
+    </p>
+
+</div>
