@@ -1,3 +1,4 @@
+<%= stylesheet_link_tag "pokemons" %>
 <h3>Correct So Far: <%= @number_correct %></h3>
 
 <p><%= @question.content %>.</p>
@@ -9,6 +10,9 @@
 <li><%= @question.op2 %></li>
 <li><%= @question.op3 %></li>
 <li><%= @question.op4 %></li>
+<li><%= f.submit "Submit"%></li>
+<%end%>
 
 </ul>
+<%= link_to "Home", root_path %>
 
