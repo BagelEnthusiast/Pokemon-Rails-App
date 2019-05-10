@@ -1,14 +1,15 @@
 <h3>Correct So Far: <%= @number_correct %></h3>
-
 <p><%= @question.content %>.</p>
 
-<%= form_for @question do |f| %>
-<%=  %>
-<ul>
-<li><%= @question.op1 %></li>
-<li><%= @question.op2 %></li>
-<li><%= @question.op3 %></li>
-<li><%= @question.op4 %></li>
-
-</ul>
-
+<%= form_with model:@question do |f|%>
+<label>Choices:</label><br>
+<label><%= @answer1 %></label>
+<%= f.radio_button :user_answer, @answer1 %><br>
+<label><%= @answer2 %></label>
+<%= f.radio_button :user_answer, @answer2 %><br>
+<label><%= @answer3 %></label>
+<%= f.radio_button :user_answer, @answer3   %><br>
+<label><%= @answer4 %></label>
+<%= f.radio_button :user_answer, @answer4   %><br>
+<%= f.submit "Submit" %>
+<%end %>

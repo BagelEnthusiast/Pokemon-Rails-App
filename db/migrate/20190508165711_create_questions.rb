@@ -7,6 +7,7 @@ class CreateQuestions < ActiveRecord::Migration[5.2]
       t.string :op3
       t.string :op4
       t.string :correct_answer
+      t.string :user_answer
 
       t.timestamps
     end

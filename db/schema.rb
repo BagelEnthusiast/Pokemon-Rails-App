@@ -57,6 +57,7 @@ ActiveRecord::Schema.define(version: 2019_05_08_215414) do
     t.string "op3"
     t.string "op4"
     t.string "correct_answer"
+    t.string "user_answer"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
